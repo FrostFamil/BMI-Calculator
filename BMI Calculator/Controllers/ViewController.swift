@@ -36,6 +36,13 @@ class ViewController: UIViewController {
     @IBAction func calculateFunction(_ sender: UIButton) {
         let height = heightSlider.value;
         let weight = weightSlider.value;
+        
+        let bmi = weight / (height * height);
+        
+        let secondVC = SecondViewController();
+        secondVC.bmiValue = String(format: "%.1f", bmi);
+        
+        self.present(secondVC, animated: true, completion: nil);
     }
 }
 
