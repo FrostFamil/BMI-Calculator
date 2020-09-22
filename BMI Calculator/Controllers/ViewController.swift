@@ -16,5 +16,10 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func heightChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func weightChanged(_ sender: UISlider) {
+    }
 }
 
