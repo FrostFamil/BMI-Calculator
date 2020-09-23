@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var bmiValue = "0.0";
+    
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
@@ -38,8 +40,16 @@ class ViewController: UIViewController {
         let weight = weightSlider.value;
         
         let bmi = weight / (height * height);
+        bmiValue = String(format: "%.1f", bmi);
         
         self.performSegue(withIdentifier: "goToResults", sender: self);
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goToResults"){
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.bmiValue = bmiValue;
+        }
     }
 }
 

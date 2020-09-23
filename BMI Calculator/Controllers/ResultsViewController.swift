@@ -10,7 +10,7 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
-    var bmiValue: String;
+    var bmiValue: String?;
     
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
@@ -21,7 +21,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
+        self.dismiss(animated: true, completion: nil);
     }
     
     /*
